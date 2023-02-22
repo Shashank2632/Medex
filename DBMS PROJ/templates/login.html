@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <Title>Medez</Title>
+  </head>
+<style>
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+  background-color: #000000e4;
+  width:48%;
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(128, 0, 0);
+  padding: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #ff0000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  color: #f1f1f1;
+}
+
+/* The "Forgot password" text */
+.psw {
+  float: right;
+  padding-top: 16px;
+  text-decoration: none;
+  color: #ff0000;
+}
+.text{
+  color:aliceblue
+}
+body{
+  background-color: black;
+  color: white;
+  background-image: url("a.jpg");
+  /* background-color:rgb(11, 255, 121); */
+}
+.head{
+  text-align:center;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.head1{
+  text-align:center;
+  font-size: 50px;
+  color:  rgb(0, 0, 255);
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+img {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+</style>
+<img src="{{ user_image }}" >
+<body>
+  
+<div class="bo">
+  <h1 class="head1">MEDEZ</h1>
+  <h3 class="head">Login </h3>
+<form action="/login" method="post">
+  <div class="container">
+    <label for="uname"><b>PID</b></label>
+    <input type="text" placeholder="Enter PID" name="user" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass" required>
+
+    <button type="submit">Login</button>
+  </div>
+
+  <div>
+    <h1 class="text">{{info}}</h1>
+     <a class="psw" href="{{url_for('register')}}">New User?Register</a>
+  </div>
+  
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends "base.html"%}
+{% block css %}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000000;
+  color: white;
+}
+
+{% endblock %}
+{% block content %}
+<img src="{{ user_image }}" >
+<h1>Hospital info</h1>
+<div class="container">
+<table id="customers" style="width:30%">
+  <tr>
+    <th style="width:15%">Medicine Name</th>
+    <th style="width:15%">TOTAL PRICE</th>
+  </tr>
+  <!-- <td>{{name1}}</td>
+  <td>{{med}}</td> -->
+  {% for row in data1 %}
+  <tr style="width:70%">
+    {% for cell in row %}
+      <td>{{cell}}</td>
+    {% endfor %}
+  </tr>
+    {% endfor %} 
+</table>
+<br>
+<table id="customers" >
+  <tr>
+    <th>Pharmacy Name</th>
+    <th>Pharmacy address</th>
+    <th>CONTACT_NO</th>
+
+    <!-- <th>Price</th> -->
+  </tr>
+  {% for row in data %}
+  <tr>
+    {% for cell in row %}
+      <td>{{cell}}</td>
+    {% endfor %}
+  </tr>
+    {% endfor %} 
+</table>
+</div>
+{% endblock %}

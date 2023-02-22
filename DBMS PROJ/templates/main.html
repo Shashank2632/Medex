@@ -1,0 +1,103 @@
+{% extends "base.html"%}
+{% block css %}
+
+form {
+  border: 3px solid #f1f1f1;
+  background-color: #000000e4;
+  margin: auto;
+  width: 60%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 150%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #ff0000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+  color: #f1f1f1;
+  width: 60%;
+  
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.text{
+  color:aliceblue;
+  text-align:center;
+}
+.head{
+  text-align:center;
+  font-size: 60px;
+  font-family: 'Times New Roman';
+  text-decoration-line: underline;
+  text-decoration-color: black;
+  color:rgb(0, 0, 255);
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+body{
+  background-color:rgb(2, 47, 184);
+}
+button {
+  background-color: #ff0000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+img {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+{% endblock %}
+{% block content %}
+<img src="{{ user_image }}" >
+<h1 class="head">Medicine Details</h1>
+<form action="/data" method="post">
+  <div class="container">
+    <label for="uname"><b>Enter Medicine Name:</b></label>
+    <input type="text" name='medname' placeholder="Enter Medicine Name" required><br>
+
+    <label for="psw"><b>Enter Quantity:</b></label>
+    <input type="text" name='quantity' placeholder="Enter Quantity" required><br>
+
+    <input type="submit" value="Enter" >
+  </div>
+</form>
+<h1 class="text">{{data}}</h1>
+{% endblock %}
